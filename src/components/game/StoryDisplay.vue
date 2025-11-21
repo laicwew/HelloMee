@@ -827,14 +827,6 @@ onMounted(() => {
       <button
         v-if="gameStore.character.name && gameStore.character.level < 4"
         class="px-4 py-2 font-medium text-bg rounded-t-lg transition-colors tab-button"
-        :class="getTabClass('FEEDER')"
-        @click="switchTab('FEEDER')"
-      >
-        FEEDER
-      </button>
-      <button
-        v-if="gameStore.character.name && gameStore.character.level < 4"
-        class="px-4 py-2 font-medium text-bg rounded-t-lg transition-colors tab-button"
         :class="getTabClass('DUMMY')"
         @click="switchTab('DUMMY')"
       >
@@ -916,38 +908,6 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- FEEDER Tab Content -->
-      <div v-else-if="gameStore.activeTab === 'FEEDER' && gameStore.character.level < 4">
-        <h3 class="text-3xl font-bold text-[var(--text-charcoal)] mb-2">
-          Talk to {{ gameStore.character.name }}
-        </h3>
-        <p class="text-2xl text-[var(--text-charcoal)] mb-3">
-          You can give {{ gameStore.character.name }} text to read so that
-          {{ gameStore.character.name }} can have a chance to
-          <span class="text-[#1282a2ff]">MEMORIZE</span> new vocabulary. Or, you can just talk to
-          {{ gameStore.character.name }} about whatever you like.
-        </p>
-
-        <div class="mb-3">
-          <textarea
-            v-model="feedText"
-            placeholder=""
-            class="w-full p-2 border border-gray-600 bg-[#5c2c20] text-white rounded text-2xl"
-            rows="4"
-            :disabled="isFeeding"
-          ></textarea>
-        </div>
-
-        <div v-if="isFeeding" class="mt-3 text-yellow-600 text-2xl flex items-center">
-          <div class="loading-spinner mr-3"></div>
-          {{ gameStore.character.name }} is reading...
-        </div>
-
-        <div v-if="error" class="mt-3 p-3 bg-red-800 text-red-100 border border-red-500">
-          <strong>Error:</strong> {{ error }}
-        </div>
-      </div>
-
       <!-- DUMMY Tab Content -->
       <div v-else-if="gameStore.activeTab === 'DUMMY' && gameStore.character.level < 4">
         <div class="story-text" v-html="storyContent"></div>
@@ -991,6 +951,37 @@ onMounted(() => {
       </div>
     </div>
 
+    <!-- FEEDER Content (moved from FEEDER tab) -->
+    <div
+      v-if="
+        gameStore.activeTab === 'GENERATED' &&
+        gameStore.character.name &&
+        gameStore.character.level < 4
+      "
+      class="mt-4"
+    >
+      <div class="mb-3">
+        <textarea
+          v-model="feedText"
+          placeholder=""
+          class="w-full p-2 border-4 border-[#000000] bg-[#d1a000] text-black rounded text-2xl"
+          rows="4"
+          :disabled="isFeeding"
+        ></textarea>
+      </div>
+      <p class="text-2xl text-yellow-500 mb-3">
+        You can give {{ gameStore.character.name }} text to read so that
+        {{ gameStore.character.name }} can have a chance to
+        <span class="text-[#1282a2ff]">MEMORIZE</span> new vocabulary. Or, you can just talk to
+        {{ gameStore.character.name }} about whatever you like.
+      </p>
+
+
+      <div v-if="error" class="mt-3 p-3 bg-red-800 text-red-100 border border-red-500">
+        <strong>Error:</strong> {{ error }}
+      </div>
+    </div>
+
     <!-- Buttons - Outside of scrollable area -->
     <div
       v-if="gameStore.activeTab === 'GENERATED' && gameStore.character.level < 4"
@@ -1012,25 +1003,22 @@ onMounted(() => {
           Clear
         </button>
       </div>
-      <button
-        v-if="gameStore.vocabCount > 0"
-        @click="reviewWords"
-        :disabled="isReviewing"
-        class="action-button bg-[#8446a9] hover:bg-[#501373] active:bg-[#2f0646]"
-      >
-        {{ isReviewing ? 'Reviewing...' : 'Review' }}
-      </button>
-    </div>
-
-    <div v-else-if="gameStore.activeTab === 'FEEDER' && gameStore.character.level < 4" class="mt-4">
-      <div class="flex flex-wrap gap-2">
+      <div class="flex gap-2">
         <button
-          v-if="feedText.trim()"
+          v-if="feedText.trim() && gameStore.character.name"
           @click="feedToAI"
           :disabled="isFeeding"
           class="action-button bg-[#0e7b4a] hover:bg-[#026538] active:bg-[#004224]"
         >
           {{ isFeeding ? 'Feeding...' : 'Feed' }}
+        </button>
+        <button
+          v-if="gameStore.vocabCount > 0"
+          @click="reviewWords"
+          :disabled="isReviewing"
+          class="action-button bg-[#8446a9] hover:bg-[#501373] active:bg-[#2f0646]"
+        >
+          {{ isReviewing ? 'Reviewing...' : 'Review' }}
         </button>
       </div>
     </div>
@@ -1109,7 +1097,7 @@ onMounted(() => {
   border: 3px solid var(--primary-gold); /* 添加边框 */
   background: #14101e; /* 背景色 */
   min-height: 200px; /* 设置最小高度 */
-  max-height: 400px; /* 设置最大高度，超过时显示滚动条 */
+  max-height: 200px; /* 设置最大高度，超过时显示滚动条 */
 }
 
 .story-text {
