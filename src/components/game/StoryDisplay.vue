@@ -958,24 +958,24 @@ onMounted(() => {
         gameStore.character.name &&
         gameStore.character.level < 4
       "
-      class="mt-4"
+      class="mt-0"
     >
-      <div class="mb-3">
+      <div class="mb-1">
         <textarea
           v-model="feedText"
-          placeholder=""
-          class="w-full p-2 border-4 border-[#000000] bg-[#d1a000] text-black rounded text-2xl"
-          rows="4"
+          :placeholder="`Give ${gameStore.character.name} something to read...`"
+          class="w-full p-2 bg-[var(--primary-gold)] text-black text-2xl placeholder-yellow-600"
+          rows="5"
           :disabled="isFeeding"
+          style="line-height: 0.8; resize: none"
         ></textarea>
       </div>
-      <p class="text-2xl text-yellow-500 mb-3">
+      <p class="text-2xl text-yellow-500 mb-3" style="line-height: 1">
         You can give {{ gameStore.character.name }} text to read so that
         {{ gameStore.character.name }} can have a chance to
         <span class="text-[#1282a2ff]">MEMORIZE</span> new vocabulary. Or, you can just talk to
         {{ gameStore.character.name }} about whatever you like.
       </p>
-
 
       <div v-if="error" class="mt-3 p-3 bg-red-800 text-red-100 border border-red-500">
         <strong>Error:</strong> {{ error }}
@@ -1097,7 +1097,7 @@ onMounted(() => {
   border: 3px solid var(--primary-gold); /* 添加边框 */
   background: #14101e; /* 背景色 */
   min-height: 200px; /* 设置最小高度 */
-  max-height: 200px; /* 设置最大高度，超过时显示滚动条 */
+  max-height: 300px; /* 设置最大高度，超过时显示滚动条 */
 }
 
 .story-text {
