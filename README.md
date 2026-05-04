@@ -31,18 +31,18 @@ The game follows a structured progression system:
    - Review previously learned vocabulary
    - Continue memorizing more words
    - If not sure what to do, check "About"
-     <img width="2559" height="1184" alt="图片" src="https://github.com/user-attachments/assets/2d6c2eb7-ceac-4dc3-8031-b0286fa7bed8" />
-     <img width="2556" height="1176" alt="图片" src="https://github.com/user-attachments/assets/422d9bd6-870e-4499-8d7f-a3d6eba8e903" />
-     <img width="2556" height="1178" alt="图片" src="https://github.com/user-attachments/assets/1ddb257d-504d-4c41-868d-dd28ef49d9bf" />
-     <img width="2550" height="1176" alt="图片" src="https://github.com/user-attachments/assets/86493559-84ff-4081-8c40-0153948a3f8e" />
+     <img width="2472" height="1176" alt="图片" src="https://github.com/user-attachments/assets/32320d31-ce43-475b-9ef0-bd03de378a15" />
+     <img width="2472" height="1176" alt="图片" src="https://github.com/user-attachments/assets/270a1986-13c9-4e1d-8c60-0eaf1ed34b1b" />
+     <img width="2469" height="1176" alt="图片" src="https://github.com/user-attachments/assets/da23f7b8-f26e-4f0d-9e1e-b564cf854923" />
+     <img width="2475" height="1185" alt="图片" src="https://github.com/user-attachments/assets/ec14995a-dd8c-4878-8762-176609dc2061" />
      <img width="2559" height="1197" alt="图片" src="https://github.com/user-attachments/assets/ede30d63-1d82-4b20-80ca-eccd1df1dfcd" />
 
 3. **Progression**
    - Reach level 2 to unlock postcards feature
    - Check collected postcards from AI interactions
    - Continue learning until reaching level 4
-     <img width="2556" height="1179" alt="图片" src="https://github.com/user-attachments/assets/3fc7febb-d075-43b8-9ac9-57ecc9fd48e2" />
-     <img width="2553" height="1182" alt="图片" src="https://github.com/user-attachments/assets/b2933f5d-dff8-4c51-b955-ad37229cac49" />
+     <img width="2475" height="1188" alt="图片" src="https://github.com/user-attachments/assets/b4648203-bf58-4988-b61d-401c804f4343" />
+     <img width="2475" height="1179" alt="图片" src="https://github.com/user-attachments/assets/f6cf1a05-5147-4a33-b410-a9e46705bde7" />
 
 4. **Completion**
    - Receive a personalized thank you letter
@@ -53,7 +53,9 @@ The game follows a structured progression system:
 5. **Explore More Languages**
    - Pick another target language and speak to the alien — a whole new journey awaits you in that language:
     <img width="2559" height="1179" alt="图片" src="https://github.com/user-attachments/assets/993208be-501c-4718-a32d-895875507b2b" />
-    
+    <img width="2466" height="1179" alt="图片" src="https://github.com/user-attachments/assets/c21c6a1e-1f16-4c30-a687-503149887ad5" />
+    <img width="2469" height="1176" alt="图片" src="https://github.com/user-attachments/assets/c7af0091-e8c6-4e23-bdf6-def9c4de1fd3" />
+
 
 
 
